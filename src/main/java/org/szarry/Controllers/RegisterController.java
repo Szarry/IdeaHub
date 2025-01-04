@@ -36,7 +36,7 @@ public class RegisterController {
         // Sprawdzanie unikalności użytkownika
         if (userService.existsByUsername(username)) {
             model.addAttribute("error", "Username already exists");
-            return "register";
+            return "open/register";
         }
 
         // Szyfrowanie hasła i rejestracja użytkownika
@@ -45,9 +45,9 @@ public class RegisterController {
             userService.registerUser(username, encodedPassword, email);
         } catch (RuntimeException e) {
             model.addAttribute("error", e.getMessage());
-            return "register";
+            return "open/register";
         }
 
-        return "redirect:/login";
+        return "redirect:open/login";
     }
 }

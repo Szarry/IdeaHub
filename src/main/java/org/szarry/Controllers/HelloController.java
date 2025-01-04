@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HelloController {
 
 
-    @GetMapping("/")
+    @GetMapping("/test")
     public String index() {
-        return "index";
+        return "/open/index";
     }
 }

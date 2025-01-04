@@ -9,6 +9,7 @@ import org.szarry.entities.AppUser;
 import org.szarry.entities.Role;
 import org.szarry.repositories.RoleRepository;
 import org.szarry.repositories.UserRepository;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -71,3 +72,4 @@ public class UserService implements UserDetailsService {
 
     }
 }
+

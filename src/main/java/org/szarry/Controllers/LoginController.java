@@ -23,7 +23,7 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login() {
-        return "login";
+        return "open/login";
     }
 
     @PostMapping("/login")
@@ -33,14 +33,14 @@ public class LoginController {
                     new UsernamePasswordAuthenticationToken(username, password)
             );
             if (authentication.isAuthenticated()) {
-                return "redirect:/";
+                return "redirect:/dashboard";
             } else {
                 model.addAttribute("error", "Invalid username or password");
-                return "login";
+                return "open/login";
             }
         } catch (AuthenticationException e) {
             model.addAttribute("error", "Invalid username or password");
-            return "login";
+            return "open/login";
         }
     }
 }
